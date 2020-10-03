@@ -1,11 +1,16 @@
 var mysql = require('mysql');
 
 const connection = mysql.createConnection({
+    host:'localhost',
     user:'root',
-    password:process.env.MYSQL_PW,
-    database:'Join_Us'
+    password:'mysql',
+    database:'testing',
+    port:'3306'
 });
-connection.connect();
+connection.connect(()=>{
+    console.log("Connected to database")
+});
+
 
 connection.query('select 1+1 as solution',function(error,results,fields){
     if (error) throw error;
