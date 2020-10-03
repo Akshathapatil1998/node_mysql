@@ -1,14 +1,23 @@
+'use strict';
+var express = require('express');
 var mysql = require('mysql');
-
-const connection = mysql.createConnection({
+var con = mysql.createConnection({
+    host:'localhost', 
     user:'root',
-    password:process.env.MYSQL_PW,
-    database:'Join_Us'
+    password:' your password',
+    database:'Your db name',
+    port:3307 // not manditory
 });
-connection.connect();
+con.connect(function(err) {
+ if(err) {
+     console.log('Error');
+ } else {
+     console.log("Connected");
+ }
+ });
 
-connection.query('select 1+1 as solution',function(error,results,fields){
-    if (error) throw error;
-console.log('The Solution is',results[0].solution);
+ con.query('select 1+6',function(err,results,fields){
+    if (err) throw err;
+console.log(results[0]);
 });
 
