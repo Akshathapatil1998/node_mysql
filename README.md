@@ -1,1 +1,1 @@
-A simple node js and mysql connectivity project.
+A simple node js and mysql connectivity project..
