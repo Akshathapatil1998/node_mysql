@@ -5,7 +5,8 @@ var con = mysql.createConnection({
     host:'localhost', 
     user:'root',
     password:' your password',
-    database:'Your db name',
+    database:'Your database
+    name',
     port:3307 // not manditory
 });
 con.connect(function(err) {
@@ -20,4 +21,8 @@ con.connect(function(err) {
     if (err) throw err;
 console.log(results[0]);
 });
+
+
+
+
 
